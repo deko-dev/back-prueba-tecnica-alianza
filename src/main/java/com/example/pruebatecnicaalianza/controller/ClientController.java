@@ -32,9 +32,9 @@ public class ClientController {
 
         HashMap<String, Object> responseCreated = new HashMap<>();
         responseCreated.put("success", true);
-        responseCreated.put("message", "Cliente creado correctamente!!");
+        responseCreated.put("message", "Clientes encontrados!!");
         responseCreated.put("data", clients);
-        return ResponseEntity.status(HttpStatus.CREATED).body(responseCreated);
+        return ResponseEntity.status(HttpStatus.OK).body(responseCreated);
     }
 
     @CrossOrigin
@@ -79,7 +79,7 @@ public class ClientController {
 
         HashMap<String, Object> responseCreated = new HashMap<>();
         responseCreated.put("success", true);
-        responseCreated.put("message", "Cliente creado correctamente!!");
+        responseCreated.put("message", "Cliente encontrado!!");
         responseCreated.put("data", resultsClient);
         return ResponseEntity.status(HttpStatus.CREATED).body(responseCreated);
     }
