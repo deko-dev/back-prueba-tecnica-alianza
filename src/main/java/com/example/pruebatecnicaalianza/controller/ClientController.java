@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping( path = "api/v3/clients")
+@CrossOrigin("*")
 public class ClientController {
 
     private ClientService clientService;
