@@ -3,20 +3,16 @@ package com.example.pruebatecnicaalianza.controller;
 import com.example.pruebatecnicaalianza.entity.Client;
 import com.example.pruebatecnicaalianza.repository.ClientRepository;
 import com.example.pruebatecnicaalianza.service.ClientService;
-import org.hibernate.mapping.Any;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
-@RequestMapping( path = "api/v1/clients")
+@RequestMapping( path = "api/v2/clients")
 public class ClientController {
 
     private ClientService clientService;
