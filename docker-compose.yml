@@ -5,7 +5,7 @@ services:
     container_name: java_db
     image: postgres:12
     ports:
-      - 5432
+      - 5431:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -19,7 +19,7 @@ services:
     env_file:
       - '.env'
     ports:
-      - 8080:8002
+      - 8002:8002
     environment:
       - DATABASE_URL=jdbc:postgresql://java_db:5432/postgres
       - DATABASE_USER=postgres
