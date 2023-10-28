@@ -1,13 +1,6 @@
-# Docker Build Maven Stage
-FROM maven:3-jdk-8-alpine AS build
-# Copy folder in docker
-WORKDIR /opt/app
-COPY ./ /opt/app
-RUN mvn clean install -DskipTests
-# Run spring boot in Docker
-FROM openjdk:8-jdk-alpine
-COPY --from=build /opt/app/target/*.jar app.jar
-ENV PORT 8002
-EXPOSE $PORT
-EXPOSE 5431
-ENTRYPOINT ["java","-jar","-Xmx1024M","-Dserver.port=${PORT}","app.jar"]
+FROM openjdk:17
+COPY ./target/pruebatecnicaalianza-0.0.1-SNAPSHOT.jar java-app.jar
+EXPOSE 5432
+EXPOSE 8002
+
+ENTRYPOINT ["java", "-jar", "java-app.jar"]
