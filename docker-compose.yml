@@ -19,7 +19,7 @@ services:
     env_file:
       - '.env'
     ports:
-      - 8080:8080
+      - 8080:8002
     environment:
       - DATABASE_URL=jdbc:postgresql://java_db:5432/postgres
       - DATABASE_USER=postgres
