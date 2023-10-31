@@ -1,28 +1,52 @@
 version: '3.8'
 
 services:
-  java_db:
-    container_name: java_db
+  java_db_desa:
+    container_name: java_db_desa
     image: postgres:12
     ports:
-      - 5431:5432
+      - 5435:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
-  java_app:
-    container_name: java_app
+      POSTGRES_DB: postgres_desa
+
+  java_db_produccion:
+    container_name: java_db_produccion
+    image: postgres:12
+    ports:
+      - 5436:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres_produccion
+
+  java_app_desa:
+    container_name: java_app_desa
     image: 'pee-java-app:1.0.0'
     build:
       context: .
       dockerfile: Dockerfile
-    env_file:
-      - '.env'
     ports:
       - 8002:8002
     environment:
-      - DATABASE_URL=jdbc:postgresql://java_db:5432/postgres
+      - DATABASE_URL=jdbc:postgresql://java_db_desa:5432/postgres_desa
       - DATABASE_USER=postgres
       - DATABASE_PWSD=postgres
     depends_on:
-      - java_db
+      - java_db_desa
+
+  java_app_produccion:
+    container_name: java_app_produccion
+    image: 'pee-java-app:1.0.0'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8003:8002
+    environment:
+      - DATABASE_URL=jdbc:postgresql://java_db_produccion:5432/postgres_produccion
+      - DATABASE_USER=postgres
+      - DATABASE_PWSD=postgres
+    depends_on:
+      - java_db_produccion
