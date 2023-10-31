@@ -22,8 +22,11 @@ COPY nginx.conf /etc/nginx/nginx.conf
 RUN chmod +x /init-db.sh
 RUN chmod +x /init.sh
 
-# Instalar Nginx y Supervisor
-RUN apt-get install -y nginx supervisor
+# Instalar Nginx
+RUN apt-get install -y nginx
+
+# Instalar Supervisor
+RUN apt-get install -y supervisor
 
 # Exponer puertos
 EXPOSE 5432
