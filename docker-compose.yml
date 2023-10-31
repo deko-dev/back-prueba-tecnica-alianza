@@ -33,6 +33,7 @@ services:
       - DATABASE_URL=jdbc:postgresql://java_db_desa:5432/postgres_desa
       - DATABASE_USER=postgres
       - DATABASE_PWSD=postgres
+      - PORT=8005
     depends_on:
       - java_db_desa
 
