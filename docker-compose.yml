@@ -49,6 +49,6 @@ services:
       - DATABASE_URL=jdbc:postgresql://java_db_produccion:5432/postgres_produccion
       - DATABASE_USER=postgres
       - DATABASE_PWSD=postgres
-      - PORT:8006
+      - PORT=8006
     depends_on:
       - java_db_produccion
