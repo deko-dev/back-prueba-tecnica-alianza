@@ -29,7 +29,7 @@ public class ClientController {
 
         HashMap<String, Object> responseCreated = new HashMap<>();
         responseCreated.put("success", true);
-        responseCreated.put("message", "DESARROLLO PRUEBAS VALIDACIÓN!!");
+        responseCreated.put("message", "DESARROLLO!!");
         responseCreated.put("data", clients);
         return ResponseEntity.status(HttpStatus.OK).body(responseCreated);
     }
