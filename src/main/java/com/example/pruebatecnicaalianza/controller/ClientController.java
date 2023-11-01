@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
-@RequestMapping( path = "api/v3/cli")
+@RequestMapping( path = "api/v3/clients")
 @CrossOrigin("*")
 public class ClientController {
 
@@ -29,7 +29,7 @@ public class ClientController {
 
         HashMap<String, Object> responseCreated = new HashMap<>();
         responseCreated.put("success", true);
-        responseCreated.put("message", "DESARROLLO PRUEBAS!!");
+        responseCreated.put("message", "Clientes en desarrollo encontrados!!");
         responseCreated.put("data", clients);
         return ResponseEntity.status(HttpStatus.OK).body(responseCreated);
     }
