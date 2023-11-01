@@ -28,12 +28,12 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8005:8005
+      - 8006:8006
     environment:
       - DATABASE_URL=jdbc:postgresql://java_db_desa:5432/postgres_desa
       - DATABASE_USER=postgres
       - DATABASE_PWSD=postgres
-      - PORT=8005
+      - PORT=8006
     depends_on:
       - java_db_desa
 
