@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
-@RequestMapping( path = "api/v3/clients")
+@RequestMapping( path = "api/v3/cli")
 @CrossOrigin("*")
 public class ClientController {
 
